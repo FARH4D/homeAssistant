@@ -5,8 +5,8 @@ width = 2560
 height = 1440
 
 image = cv2.imread("calibrate/images/CalibrationFrame.jpg") # Gets the image of the frame on my desk
-cv2.imshow("Image", image)
-cv2.waitKey(0)
+# cv2.imshow("Image", image)
+# cv2.waitKey(0)
 
 gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 thresholdValue = 195
@@ -15,8 +15,8 @@ empty, thresholdedImage = cv2.threshold(gray, thresholdValue, 255, cv2.THRESH_BI
 
 thresholdedImage = thresholdedImage.astype('uint8')
 
-# cv2.imshow("Thresholded Image", thresholdedImage)
-# cv2.waitKey(0)
+cv2.imshow("Thresholded Image", thresholdedImage)
+cv2.waitKey(0)
 
 contours, empty = cv2.findContours(thresholdedImage, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE) # Finds every contour in the image
 largest = max(contours, key=cv2.contourArea) # Gets the largest contour (calculated based on the area)

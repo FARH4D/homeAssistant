@@ -35,7 +35,7 @@ def warp_image_without_zoom(img, src_points):
     return warped
 
 
-img = cv2.imread('calibrate/images/distortedImage.jpg') # Loading my distorted image
+img = cv2.imread('calibrate/images/CalibrationFrame.jpg') # Loading my distorted image
 
 pts_src = []
 for i in range(4):

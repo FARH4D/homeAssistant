@@ -1,0 +1,5 @@
+Calibrating after desk, camera or projector is moved.
+
+1: findFrame.py to create a frame and take a picture of it on your desk
+2: calibrateFrame.py to get the corners of the frame
+3: homography.py to undistort my image and make it straight

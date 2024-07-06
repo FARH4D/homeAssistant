@@ -54,8 +54,7 @@ class Main():
                 
                 if results.multi_hand_landmarks:
                     for handLandmarks in results.multi_hand_landmarks: # Draws hand landmarks
-                        
-                        self.mp_drawing.draw_landmarks(warpedImage, handLandmarks, self.mp_hands.HAND_CONNECTIONS)
+                        #self.mp_drawing.draw_landmarks(warpedImage, handLandmarks, self.mp_hands.HAND_CONNECTIONS)
                         indexFingerTip = handLandmarks.landmark[self.mp_hands.HandLandmark.INDEX_FINGER_TIP] # Gets the position of the index finger tip
                         indexFingerX = int(indexFingerTip.x * self.width) # Normalises the coordinates to pixel coordinates (the position on my 1360x768 projector)
                         indexFingerY = int(indexFingerTip.y * self.height)
@@ -79,7 +78,6 @@ class Main():
                 screen.blit(pygameImage, (0, 0)) # Displays the image in Pygame window
                 screen.blit(welcomeText, (450, 50))
                 screen.blit(timerText, (1150, 45))
-                
                 
                 for event in pygame.event.get(): # Handles Pygame events
                     if event.type == pygame.QUIT:
